@@ -7,12 +7,14 @@ class ListContainer extends Component {
   constructor() {
     super()
     this.state = {
-      task: []
+      task: [],
+      isClicked: false
     }
     // this.handleInputChange = this.handleInputChange.bind(this)
     // this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  //input form function:
   handleAddTask(taskItem) {
     this.setState( prevState => {
       return {
@@ -21,34 +23,45 @@ class ListContainer extends Component {
     })
   }
 
+  //list item functions:
+  // handleOnClick() {
+  //   this.setState({
+  //     done: true
+  //   })
+  // }
+  //
+  // handleStrikeThroughClick(index) {
+  //   this.setState({
+  //     task: this.state.task.map((oneTask, i) => {
+  //       if (i === index) {
+  //         oneTask.isClicked = !oneTask.isClicked
+  //       }
+  //       return oneTask
+  //     })
+  //   })
+  // }
+
+  handleStrikeThroughClick() {
+    console.log('i was clicked!')
+    this.setState({
+      isClicked: !this.state.isClicked
+    })
+  }
+
   render() {
     return(
       <div>
-        <InputForm onSubmit={this.handleAddTask.bind(this)}/>
-        <ListItem taskItem={this.state.task} />
+        <InputForm
+          onSubmit={this.handleAddTask.bind(this)}
+        />
+        <ListItem
+          status={this.state.isClicked}
+          taskItem={this.state.task}
+          onClick={this.handleStrikeThroughClick.bind(this)}
+        />
       </div>
     )
   }
 }
-
-//
-// handleSubmit(e) {
-//   e.preventDefault()
-//   this.props.onSubmit( this.state.student )
-//   this.setState({student: ''})
-//   //window.history.pushState('/students') //adding this
-// }
-//
-// render() {
-//   return (
-    // <div className='col-md-8' >
-    //   <form onSubmit={this.handleSubmit.bind(this)}>
-    //     <label>Student Name</label>
-    //     <input type='text' value={this.state.student} onChange={this.handleInputChange}/>
-    //     <input type='submit' value='Add a Student' />
-    //   </form>
-    // </div>
-//   )
-// }
 
 export default ListContainer
