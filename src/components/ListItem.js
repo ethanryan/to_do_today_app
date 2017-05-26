@@ -1,11 +1,12 @@
 import React from 'react'
 
 const ListItem = (props) => {
-  const els = props.taskItem.map(item => { return (<li>{item}</li>) })
+  console.log('ListItem props: ', props);
+  const eachTask = props.taskItem.map(item => { return (<li>{item}</li>) })
   return (
     <div>
       <ul>
-        { els }
+        { eachTask }
       </ul>
     </div>
   )

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 
 class InputForm extends Component {
+
   constructor(props){
+    console.log('props from form', props);
     super() //inheritance
     this.state=({
       input: ''
@@ -9,20 +11,20 @@ class InputForm extends Component {
   }
 
 
-    handleInputChange(e) {
-      console.log('this', this);
-      console.log('e', e);
-      this.setState({
-        input: e.target.value
-      })
-    }
+  handleInputChange(e) {
+    console.log('this', this);
+    console.log('e', e);
+    this.setState({
+      input: e.target.value
+    })
+  }
 
-    handleSubmit(e) {
-      e.preventDefault()
-      this.props.onSubmit( this.state.input )
-      this.setState({input: ''})
-      //window.history.pushState('/students') //adding this
-    }
+  handleSubmit(e) {
+    e.preventDefault()
+    this.props.onSubmit( this.state.input )
+    this.setState({input: ''})
+    //window.history.pushState('/students') //adding this
+  }
 
   render(){
     return(
