@@ -1,52 +1,34 @@
 import React, {Component} from 'react'
 
 import InputForm from './InputForm'
-import ListItem from './ListItem'
+import List from './List'
+import CompletedItems from './CompletedItems'
 
 class ListContainer extends Component {
   constructor() {
     super()
     this.state = {
-      task: [],
-      isClicked: false
-    }
-    // this.handleInputChange = this.handleInputChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
+      tasks: [],
+      completedTasks: [] //adding this to keep track of all completedTasks
+  }
   }
 
-  //input form function:
   handleAddTask(taskItem) {
     this.setState( prevState => {
       return {
-        task: [...prevState.task, taskItem]
+        tasks: [...prevState.tasks, taskItem]
       }
     })
   }
 
-  //list item functions:
-  // handleOnClick() {
-  //   this.setState({
-  //     done: true
-  //   })
-  // }
-  //
-  // handleStrikeThroughClick(index) {
-  //   this.setState({
-  //     task: this.state.task.map((oneTask, i) => {
-  //       if (i === index) {
-  //         oneTask.isClicked = !oneTask.isClicked
-  //       }
-  //       return oneTask
-  //     })
-  //   })
-  // }
-
-  handleStrikeThroughClick() {
-    console.log('i was clicked!')
-    this.setState({
-      isClicked: !this.state.isClicked
-    })
+  handleDeleteTask(task, index, tasks) {
+    console.log('list container', index);
+    this.setState( prevState => ({
+      tasks: prevState.tasks.filter( task => task !== tasks[index]),
+      completedTasks: [...prevState.completedTasks, task]
+    }))
   }
+
 
   render() {
     return(
@@ -54,11 +36,11 @@ class ListContainer extends Component {
         <InputForm
           onSubmit={this.handleAddTask.bind(this)}
         />
-        <ListItem
-          status={this.state.isClicked}
-          taskItem={this.state.task}
-          onClick={this.handleStrikeThroughClick.bind(this)}
+        <List
+          tasks={this.state.tasks}
+          onDelete={this.handleDeleteTask.bind(this)}
         />
+        <CompletedItems completedTasks={this.state.completedTasks}/>
       </div>
     )
   }
