@@ -3,12 +3,13 @@ import React, {Component} from 'react'
 import InputForm from './InputForm'
 import List from './List'
 import CompletedItems from './CompletedItems'
+import Rewards from './Rewards'
 
 class ListContainer extends Component {
   constructor() {
     super()
     this.state = {
-      tasks: [],
+      tasks: ["Wake up at 7am", "Go to Flatiron School", "Learn React", "Talk about gamification"],
       completedTasks: [] //adding this to keep track of all completedTasks
   }
   }
@@ -32,15 +33,29 @@ class ListContainer extends Component {
 
   render() {
     return(
-      <div>
-        <InputForm
-          onSubmit={this.handleAddTask.bind(this)}
-        />
-        <List
-          tasks={this.state.tasks}
-          onDelete={this.handleDeleteTask.bind(this)}
-        />
-        <CompletedItems completedTasks={this.state.completedTasks}/>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4">
+            <InputForm
+              onSubmit={this.handleAddTask.bind(this)}
+            />
+            <List
+              tasks={this.state.tasks}
+              onDelete={this.handleDeleteTask.bind(this)}
+            />
+          </div>
+          <div className="col-md-4">
+            <CompletedItems completedTasks={this.state.completedTasks}/>
+          </div>
+          <div className="col-md-4">
+            <div>
+              <Rewards
+                tasks={this.state.tasks}
+                completedTasks={this.state.completedTasks}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

@@ -4,7 +4,7 @@ const CompletedItems = (props) => {
   let doneTask = props.completedTasks.map(comptask => { return <li>{comptask}</li>})
   return(
     <div>
-      <p>Completed Items:</p>
+      <h3>Completed Items:</h3>
       <ul>
         {doneTask}
       </ul>

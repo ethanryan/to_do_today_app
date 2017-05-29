@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>ToDoToday App</h2>
+          <nav className="navbar navbar-light bg-faded">
+            <a class="navbar-brand">ToDoToday</a>
+          </nav>
           <ListContainer />
         </div>
       </div>

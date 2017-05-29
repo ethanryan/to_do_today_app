@@ -36,7 +36,7 @@ class InputForm extends Component {
   render() {
     return(
       <div>
-        <h1>Enter a To Do Item</h1>
+        <h3>Enter a To Do Item:</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input
             type="text"

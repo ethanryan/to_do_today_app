@@ -14,3 +14,11 @@ body {
   background: blue;
   text-decoration: line-through;
 }
+
+.row span.gami-padding {
+  padding: 15px;
+}
+
+.score-center {
+  text-align: center;
+}
