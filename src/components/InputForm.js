@@ -12,7 +12,7 @@ class InputForm extends Component {
     })
   }
 
-  handleInputChange(e) {
+  handleInputChange(event) {
     //console.log('this', this);
     //console.log('e', e);
     this.setState({
@@ -20,8 +20,8 @@ class InputForm extends Component {
     })
   }
 
-  handleSubmit(e) {
-    e.preventDefault()
+  handleSubmit(event) {
+    event.preventDefault()
     this.props.onSubmit( this.state.input )
     this.setState({input: ''})
   }

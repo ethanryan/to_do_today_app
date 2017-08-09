@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import InputForm from './InputForm'
 import List from './List'
+import ListItem from './ListItem'
 import CompletedItems from './CompletedItems'
 import Rewards from './Rewards'
 
