@@ -6,7 +6,7 @@ var FaTrophy = require('react-icons/lib/fa/trophy');
 const Rewards = (props) => {
   console.log("counter", props)
 
-  const Counter = props => { return props.completedTasks.length }
+  // const Counter = props => { return props.completedTasks.length }
 
 
   return(

@@ -7,8 +7,7 @@ class InputForm extends Component {
     super(props) //inheritance
     this.state=({
       input: '',
-      isClicked: false, //add these as default values for new objects created by form
-    //   className: null, //add these as default values for new objects created by form
+      // isClicked: false, //add these as default values for new objects created by form
     })
   }
 
@@ -41,7 +40,7 @@ class InputForm extends Component {
           <input
             type="text"
             value={this.state.input}
-            isClicked={this.state.isClicked}
+            // isClicked={this.state.isClicked}
             className={this.state.className}
             onChange={this.handleInputChange.bind(this)}
           />

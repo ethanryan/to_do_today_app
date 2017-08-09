@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <nav className="navbar navbar-light bg-faded">
-            <a class="navbar-brand">ToDoToday</a>
+            <a className="navbar-brand">ToDoToday</a>
           </nav>
           <ListContainer />
         </div>

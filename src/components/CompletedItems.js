@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CompletedItems = (props) => {
-  let doneTask = props.completedTasks.map(comptask => { return <li>{comptask}</li>})
+  let doneTask = props.completedTasks.map((comptask, index) => { return <li key={index}>{comptask}</li>})
   return(
     <div>
       <h3>Completed Items:</h3>
