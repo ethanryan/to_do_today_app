@@ -11,7 +11,7 @@ class ListContainer extends Component {
     this.state = {
       tasks: ["Wake up at 7am", "Go to Flatiron School", "Learn React", "Talk about gamification"],
       completedTasks: [] //adding this to keep track of all completedTasks
-  }
+    }
   }
 
   handleAddTask(taskItem) {
@@ -45,7 +45,8 @@ class ListContainer extends Component {
             />
           </div>
           <div className="col-md-4">
-            <CompletedItems completedTasks={this.state.completedTasks}/>
+            <CompletedItems
+              completedTasks={this.state.completedTasks}/>
           </div>
           <div className="col-md-4">
             <div>

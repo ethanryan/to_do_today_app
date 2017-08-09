@@ -1,14 +1,12 @@
 import React from 'react'
-var FaTrophy = require('react-icons/lib/fa/trophy');
 var FaStar = require('react-icons/lib/fa/star');
-
+var FaTrophy = require('react-icons/lib/fa/trophy');
 
 
 const Rewards = (props) => {
   console.log("counter", props)
 
   const Counter = props => { return props.completedTasks.length }
-
 
 
   return(
@@ -30,20 +28,3 @@ const Rewards = (props) => {
 }
 
 export default Rewards
-
-
-
-
-
-// const Counter = (props) =>{
-//   return props.completedTasks.length
-// }
-
-
-// const FirstBadge = () =>{
-//
-// }
-//
-// const AllDoneBadge = () =>{
-//
-// }
