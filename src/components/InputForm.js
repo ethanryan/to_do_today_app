@@ -7,8 +7,7 @@ class InputForm extends Component {
     super() //inheritance
     this.state=({
       input: '',
-      isClicked: false, //add these as default values for new objects created by form
-    //   className: null, //add these as default values for new objects created by form
+      // isClicked: false, //add these as default values for new objects created by form
     })
   }
 

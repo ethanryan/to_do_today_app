@@ -60,7 +60,6 @@ class ListItem extends Component {
         <li
           name={item}
           key={index}
-          index={index}
           onClick={() => {console.log('clicking this index: ', index); that.props.onDelete(item, index, tasks)} }
 
           > {item} </li>
