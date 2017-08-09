@@ -6,7 +6,9 @@ class InputForm extends Component {
     console.log('props from form: ', props);
     super() //inheritance
     this.state=({
-      input: ''
+      input: '',
+      isClicked: false, //add these as default values for new objects created by form
+    //   className: null, //add these as default values for new objects created by form
     })
   }
 
@@ -14,7 +16,7 @@ class InputForm extends Component {
     //console.log('this', this);
     //console.log('e', e);
     this.setState({
-      input: e.target.value
+      input: event.target.value
     })
   }
 
@@ -27,7 +29,7 @@ class InputForm extends Component {
   render() {
     return(
       <div>
-        <h1>Enter a To Do Item</h1>
+        <h3>Enter a To Do Item:</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type="text"
             value={this.state.input}
